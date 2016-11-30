@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="keywords" content="锤子, 锤子科技官网, 锤子手机官网, 锤子科技, Smartisan, SmartisanOS, SmartisanROM, 锤子ROM">
+		<meta name="description" content="锤子科技是一家制造移动互联网终端设备的公司，公司的使命是用完美主义的工匠精神，打造用户体验一流的数码消费类产品（智能手机为主），改善人们的生活质量。">
+		<link rel="stylesheet" href="css/materialize.css" />
+		<link rel="stylesheet" type="text/css" href="css/Smartisan.css" />
+		<!--避免{{}}闪烁-->
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angualr-route.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body ng-app="app" ng-controller="Controller">
+		<!--header-nav导航开始-->
+		<nav ng-show="flag">
+			<div class="nav-wrapper header-nav">
+				<a href="#" class="top-logo brand-logo"></a>
+				<ul id="header-nav" class="right topnav">
+					<li class="active"><a di-href="#index" >在线商城</a></li>
+					<li><a di-href="#M1" >Smartisan M1 / M1L</a></li>
+					<li><a di-href="#OS" >Smartisan OS</a></li>
+					<li><a di-href="#huanxi"  ng-click="flag=false;">欢喜云</a></li>
+					<li><a di-href="#yingyong" >应用下载</a></li>
+					<li><a di-href="#luntan" >官方论坛</a></li>
+					<li style="width:100px;height:50px;"></li>
+					<a di-href="#login"  class="right dd" ng-model="text" ng-click="flag=false;">登录</a></span>
+				</ul>
+			</div>
+		</nav>
+		<!--header-nav导航结束-->
+		<!--存放视图的区域-->
+		<div ng-view></div>
+		<script type="text/ng-template" id="login">
+			<div class="login">
+				<img class="logo img-responsive" src="img/smartisan_4ada7fecea.png" />
+				<h5 style="text-align:center;margin:0;">使用 Smartisan ID 登录官网</h5>
+				<form name="myForm">
+					<span class="material-icons tubiao">perm_identity</span>
+					<input type="text" name="myName" ng-model="text" required ng-minlength="3" ng-maxlength="9" ng-pattern="/^[a-zA-Z]+$/" ng-keyup="sayMessage(myForm.myName.$error,true)"  ng-mouseleave="setCookie('user',text,30)"/>
+					<p ng-repeat="nameMessage in nameObj.nameMessages| filter : nameObj.tips ">{{nameMessage.msg}}</p>
+
+					<span class="material-icons">lock</span><input type="password" name="myPass" ng-model="pass" required ng-minlength="3" ng-maxlength="9" ng-pattern="/^[0-9]+$/" ng-keyup="sayMessage(myForm.myPass.$error)" />
+					<p ng-repeat="nameMessage in nameNum.nameMessages| filter : nameNum.type ">{{nameMessage.msg}}</p>
+
+					<input type="checkbox" class="filled-in" id="filled-in-box" checked style="display:none;" />
+					<label for="filled-in-box">7天内自动登录</label>
+					<a href="" class="right" style="margin-left:10px;">忘记密码?</a>
+					<a href="" class="right">注册 Smartisan ID</a>
+					<button class="dengl btn btn-primary" ng-click="fanhuiIndex()">登录</button><br />
+					<a href="" class="left gray-text">其他账户登录</a>
+					<a href="" class="right gray-text">国际手机号登录></a>
+				</form>
+			</div>
+		</script>
+		<script type="text/ng-template" id="luntan"></script>
+		<script type="text/ng-template" id="yingyong">
+			<div class="yingyong-box">
+				<div class="yingyong">
+					<!--banner图切换开始-->
+					<div class="banner-box">
+						<nav>
+							<div class="nav-wrapper yingyong-nav">
+								<ul class="left">
+									<li class="active"><a href="#">全部应用</a></li>
+									<li><a href="#">ROM 适配</a></li>
+									<li><a href="#">锤子桌面</a></li>
+									<li><a href="#">HandShaker</a></li>
+									<li><a href="#">锤子阅读</a></li>
+									<li><a href="#">锤子便签</a></li>
+									<li><a href="#">锤子邮件</a></li>
+									<li><a href="#">锤子时钟</a></li>
+									<li><a href="#">锤子日历</a></li>
+									<li><a href="#">欢喜云同步工具</a></li>
+									<li><a href="#">锤子科技论坛</a></li>
+									<li><a href="#">锤子驾驶</a></li>
+								</ul>
+							</div>
+						</nav>
+						<div class="banner">
+							<div class="carousel carousel-slider">
+								<a class="carousel-item" href="#one!"><img src="img/y1.png"></a>
+								<a class="carousel-item" href="#two!"><img src="img/y2.jpg"></a>
+								<a class="carousel-item" href="#three!"><img src="img/y3.jpg"></a>
+								<a class="carousel-item" href="#four!"><img src="img/y4.png"></a>
+								<a class="carousel-item" href="#four!"><img src="img/y5.jpg"></a>
+								<a class="carousel-item" href="#four!"><img src="img/y6.jpg"></a>
+							</div>
+						</div>
+					</div>
+					<!--banner图切换结束-->
+					<!--双页面切换开始-->
+					<div class="container yy">
+						<ul class="row body">
+							<li class="col m3 change">
+								<div class="model1">
+									<img class="active" src="img/yy7.png" />
+									<h6>HandShaker</h6>
+									<p class="title3">在Mac和Windows电脑上也可以方便自如地管理你在Android手机上的内容</p>
+									<img class="img" src="img/android.png" /><img src="img/Mac.png" />
+								</div>
+								<div class="model2" style="display:none;">
+									<ul>
+										<li>
+											<img src="img/yy10.png" />
+											<a href="">下载Windows版安装版</a>
+										</li>
+										<li>
+											<img src="img/yy11.png" />
+											<a href="">下载Mac版安装文件</a>
+										</li>
+									</ul>
+									<a href="#">进一步了解HandShaker></a>
+								</div>
+							</li>
+							<li class="col m3 change" ng-repeat="data in datas">
+								<div class="model1">
+									<img class="active" src="{{data.src}}" />
+									<h6>{{data.name}}</h6>
+									<p class="title3">{{data.jieshao}}</p>
+									<img class="img" src="{{data.tubiao1}}" /><img src="{{data.tubiao2}}" />
+								</div>
+								<div class="model2" style="display:none;">
+									<img class="img-responsive erweima center-block" src="{{data.erweima}}" />
+									<p>{{data.p}}</p>
+									<a href="#">{{data.link}}</a>
+								</div>
+							</li>
+							<li class="col m3 change">
+								<div class="model1">
+									<img class="active" src="img/yy6.png" />
+									<h6>欢喜云同步工具</h6>
+									<p class="title3">可以将手机上的数据上传到欢喜云然后在装有欢喜云的手机上来同步这些数据</p>
+									<img class="img" src="img/android.png" /><img src="img/Mac.png" />
+								</div>
+								<div class="model2" style="display:none;">
+									<button class="btn btn-default shuaji">刷机</button>
+									<p>扫二维码下载锤子科技论坛</p>
+									<a href="#">进一步了解锤子科技论坛</a>
+								</div>
+							</li>
+							<li class="col m3">
+								<div class="model1">
+									<img class="active" src="img/yyy8.png" />
+									<h5>敬请期待</h5>
+									<p class="title3">更多锤子出品应用即将发布</p>
+									<img class="img" src="img/android.png" /><img src="img/Mac.png" />
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--双页面切换结束-->
+				</div>
+			</div>
+		</script>
+		<script type="text/ng-template" id="huanxi">
+			<ul id="slide-out" class="side-nav">
+				<li>
+					<div class="userView">			
+						<a href="#"><img class="circle" src="img/smartisan_4ada7fecea.png"></a>
+						<a href="#"><span class=" name">Smartisan</span></a>
+						<a href="#"><span class=" email">Smartisan@s.com</span></a>
+					</div>
+				</li>
+				<li><a href=""><i class="material-icons">cloud</i>欢喜云首页</a></li>
+				<li><a href=""><i class="material-icons">contacts</i>便签</a></li>
+				<li><a href=""><i class="material-icons">perm_phone_msg</i>联系人</a></li>
+				<li><a href=""><i class="material-icons">stay_current_portrait</i>查找手机</a></li>				
+			</ul>
+			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+			<div class="center-align huanxi">
+				<img class="yun" src="img/yun.png" />
+				<h3>Smartisan 欢喜云服务</h3>
+				<p>你可以通过本人专属 Smartisan ID 登录网页版欢喜云</p>
+				<p>在电脑端也能轻松管理和同步你的联系人、便签和查找手机的功能</p>
+				<button class="btn btn-primary" ng-click="fanhuiDenglv()">现在登录</button><br />
+				<a href="">注册新用户</a>
+				<a href="">|</a>
+				<a href="">下载欢喜云同步工具</a>
+				<p>Copyright © 2016, Smartisan Digital Co., Ltd. All Rights Reserved.北京锤子数码科技有限公司</p>
+			</div>
+		</script>
+		<script type="text/ng-template" id="OS">
+           <nav class="M1menu">
+				<div class="nav-wrapper">
+					<ul class="left">
+						<li class="logo">Smartisan OS</li>
+						<li class="active"><a href="#">概览</a></li>
+						<li><a href="#">设计</a></li>
+						<li><a href="">功能</a></li>
+						<li><a href="#">相机</a></li>
+						<li><a href="#">操作系统</a></li>
+						<li><a href="#">技术规格</a></li>
+					</ul>
+					<ul class="right">
+						<li><a href="">切换多语言</a></li>
+						<li><a href="">优先购买码</a></li>
+						<li><a href="">手机回收置换计划</a></li>
+						<li><button class="btn btn-primary">前去刷机</button></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="container OS">
+<img class="center-block" src="img/logo_d4aa5fa65d.png"/>
+<div class="juzhong">
+	<h5>Smartisan OS 3.0 / 3.1</h5>
+<p>开创性地加入了 One Step 、Big Bang 等新特性，创造出信息处理的全新交互模式</p>
+<p>结合在语音转文字领域技术遥遥领先的讯飞语音输入，从文字输入、编辑、分享和不同应用间协作等方面</p>
+<p>大幅提升智能手机的效率，令其他手机操作系统望尘莫及</p>
+</div>
+
+			</div>
+		</script>
+		<script type="text/ng-template" id="M1">
+			<nav class="M1menu">
+				<div class="nav-wrapper">
+					<ul class="left">
+						<li class="logo">Smartisan M1 / M1L</li>
+						<li class="active"><a href="#">概览</a></li>
+						<li><a href="#">设计</a></li>
+						<li><a href="">功能</a></li>
+						<li><a href="#">相机</a></li>
+						<li><a href="#">操作系统</a></li>
+						<li><a href="#">技术规格</a></li>
+					</ul>
+					<ul class="right">
+						<li><a href="">切换多语言</a></li>
+						<li><a href="">优先购买码</a></li>
+						<li><a href="">手机回收置换计划</a></li>
+						<li><button class="btn btn-primary">现在购买</button></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="mm center-align">
+				<h4>令人生畏的,超乎实际需要的强大性能</h4>
+				<h5>真正定义了旗舰机配置的'奢侈'</h5>
+				<p class="blue-text">进一步了解'一小步'></p>
+				<img src="img/m3.png" />
+				<h4>锤子科技的一小步,智能手机进步的一大步</h4>
+				<p class="blue-text">进一步了解Smartisan M1 / M1L的配置及功能</p>
+				<img src="img/performance-img_ea4e580320.png" class="haitun" />
+			</div>
+			<div class="three-phone container">
+				<div class="row">
+					<div class="col s3 left">
+						<img src="img/pretty-mirror-left_0cc13ed337.png" />
+						<img style="display:none;" src="img/pretty-brown-left_eb6386090f.png" />
+						<img style="display:none;" src="img/pretty-mirror-left_0cc13ed337@2x.png" />
+					</div>
+					<div class="col s6 center-align">
+						<h4>三种颜值,一样爆表</h4>
+						<p class="blue-text">进一步了解Smartisan M1 / M1L的设计</p>
+						<ul>
+							<li>
+								<a class="left togglePhone"></a>
+								<span class="left">白,哑光铝合金  </span>
+							</li>
+							<li>
+								<a class="left"></a>
+								<span class="left">咖啡金,真皮  </span>
+							</li>
+							<li>
+								<a class="left"></a>
+								<span class="left">白,镜面不锈钢  </span>
+							</li>
+						</ul>
+					</div>
+					<div class="col s3 right">
+						<img src="img/pretty-silver-right_483446cddd.png" />
+						<img style="display:none;" src="img/pretty-brown-right_5d69600fa4.png" />
+						<img style="display:none;" src="img/pretty-mirror-right_84dd857a9b.png" />
+					</div>
+				</div>
+				<div class="six container center-align">
+					<h4>Smartisan OS 3.x，手机上的信息输入、处理及分享的一站式方案</h4>
+					<p class="blue-text">进一步了解 Smartisan OS></p>
+					<img src="img/os-phone_01_da48d493c8.png" />
+					<img src="img/os-phone_02_20c53a8199.png" />
+					<img src="img/os-phone_03_e4b9466b03.png" />
+					<img src="img/os-phone_04_c30bf2435b.png" />
+					<img src="img/os-phone_05_9062c699f6.png" />
+					<img src="img/os-phone_06_b634cfa733.png" />
+				</div>
+			</div>
+		</script>
+		<script type="text/ng-template" id="index">
+			<div class="content">
+				<div class="content-box">
+					<!--sub-nav导航开始-->
+					<nav>
+						<div class="nav-wrapper sub-nav">
+							<ul class="left">
+								<li class="active"><a href="#">精选</a></li>
+								<li class="dian">▪</li>
+								<li><a href="#">手机</a></li>
+								<li class="dian">▪</li>
+								<li><a href="">耳机/信箱</a></li>
+								<li class="dian">▪</li>
+								<li><a href="#">贝壳/保护套</a></li>
+								<li class="dian">▪</li>
+								<li><a href="#">"情怀"贝壳</a></li>
+								<li class="dian">▪</li>
+								<li><a href="#">其他周边</a></li>
+								<li class="dian">▪</li>
+								<li><a href="#">保修服务</a></li>
+								<li class="dian">▪</li>
+								<li><a href="#">其他商品</a></li>
+							</ul>
+							<ul class="right">
+								<li><i class="small material-icons black-text">shopping_cart</i></li>
+								<li><a href="">购物车<span class="badge circle black white-text">1</span></a></li>
+								<li></li>
+							</ul>
+						</div>
+					</nav>
+
+					<!--sub-nav导航结束-->
+					<!--banner图切换开始-->
+					<div class="slider-box container">
+						<div class="slider row" id="p1_banner">
+							<ul class="slides col l12">
+								<li class="gaoducha-box">
+									<img class="img-responsive" src="img/banner-3d-item-m12-box-1.png" />
+									<img class="gaodu1 img-responsive" src="img/banner-3d-item-m12-box-2.png" />
+									<img class="gaodu2 img-responsive" src="img/banner-3d-item-m12-box-3.png" />
+								</li>
+								<li class="gaoducha-box">
+									<img class="img-responsive" src="img/banner-3d-item-m11-box-1.png" />
+									<img class="gaodu1 img-responsive" src="img/banner-3d-item-m11-box-2.png" />
+									<img class="gaodu2 img-responsive" src="img/banner-3d-item-m11-box-3.png" />
+								</li>
+								<li class="gaoducha-box">
+									<img class="img-responsive" src="img/banner-3d-item-m13-box-1.png" />
+									<img class="gaodu1 img-responsive" src="img/banner-3d-item-m13-box-2.png" />
+									<img class="gaodu2 img-responsive" src="img/banner-3d-item-m13-box-3.png" />
+								</li>
+
+							</ul>
+						</div>
+					</div>
+					<!--banner图切换结束-->
+					<div class="container activities">
+						<div class="row">
+							<div class="col m3">
+								<img class="img-responsive" src="img/a1.jpg" />
+							</div>
+							<div class="col m3">
+								<img class="img-responsive" src="img/a2.jpg" />
+							</div>
+							<div class="col m3">
+								<img class="img-responsive" src="img/a3.jpg" />
+							</div>
+							<div class="col m3">
+								<img class="img-responsive" src="img/011.jpg" />
+							</div>
+						</div>
+					</div>
+					<div class="container hot">
+						<div class="row header">
+							<div class="col m12">
+								热门产品
+							</div>
+						</div>
+						<ul class="row body">
+							<li class="col m3" ng-repeat="hot in hots">
+								<img class="active" src="{{hot.img1}}" />
+								<img src="{{hot.img2}}" />
+								<h6>{{hot.h6}}</h6>
+								<p class="title1">{{hot.title1}}</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" name="{{hot.name}}" type="radio" id="{{hot.id1}}" checked/>
+										<label for="{{hot.id1}}" class="{{hot.class1}}">{{hot.color1}}</label>
+										<input class="with-gap" name="{{hot.name}}" type="radio" id="{{hot.id2}}" />
+										<label for="{{hot.id2}}" class="{{hot.class2}}">{{hot.color2}}</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">{{hot.price}}</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/23.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" name="group3" type="radio" id="test3" checked/>
+										<label for="test3">白色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/25.jpg" />
+								<img src="img/17.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" name="group4" type="radio" id="test4" checked/>
+										<label for="test4">黑色</label>
+										<input class="with-gap" name="group4" type="radio" id="test5" />
+										<label for="test5" class="black-text">白色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/21.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div style="height:30px;">
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="container jingxuan">
+						<div class="row header">
+							<div class="col m12">
+								官方精选
+							</div>
+						</div>
+						<ul class="row body">
+							<li class="col m6" style="border-left:1px solid #ccc;z-index:99;">
+								<img class="active" src="img/24.jpg" />
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/25.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" type="radio" id="test12" checked/>
+										<label for="test12" class="gray-text">白色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/21.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" type="radio" id="tes12" checked/>
+										<label for="test12">白色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/erji1.jpg" />
+								<img src="img/erji2.jpg" />
+								<img src="img/erji3.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" name="group6" type="radio" id="test6" checked/>
+										<label for="test6" class="black-text">黑色</label>
+										<input class="with-gap" name="group6" type="radio" id="test7" />
+										<label for="test7" class="pink-text">粉色</label>
+										<input class="with-gap" name="group6" type="radio" id="test8" />
+										<label for="test8">白色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/yifu1.jpg" />
+								<img src="img/yifu2.jpg" />
+								<img src="img/yifu3.jpg" />
+								<img src="img/yifu4.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" name="group31" type="radio" id="test53" checked/>
+										<label for="test53" class="black-text">黑色</label>
+										<input class="with-gap" name="group31" type="radio" id="test54" />
+										<label for="test54" class="pink-text">红色</label>
+										<input class="with-gap" name="group31" type="radio" id="test55" />
+										<label for="test55" class="gray-text">棕色</label>
+										<input class="with-gap" name="group31" type="radio" id="test56" />
+										<label for="test56" class="blue-text">蓝色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/19.jpg" />
+								<img src="img/12.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" name="group30" type="radio" id="test77" checked/>
+										<label for="test77" class="black-text">白色</label>
+										<input class="with-gap" name="group30" type="radio" id="test88" />
+										<label for="test88" class="gray-text">黑色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+							<li class="col m3">
+								<img class="active" src="img/20.jpg" />
+								<h6>Smartisan M1/M1L 软胶保护套</h6>
+								<p class="title1">TPU环保材质、细腻防滑、防油污</p>
+								<div class="dot">
+									<form class="text-center">
+										<input class="with-gap" type="radio" id="test15" checked/>
+										<label for="test15">白色</label>
+									</form>
+								</div>
+								<div class="togglePrice">
+									<p class="price">¥49.00</p>
+									<button class="more btn btn-default">查看更多</button>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<br /><br /><br />
+				</div>
+				<!--content-box end-->
+			</div>
+			<!--content end-->
+		</script>
+		<!--底部赞助商-->
+		<footer class="container" ng-show="flag">
+			<div class="row">
+				<div class="col m9">
+					<ul class=" clo m2 left">
+						<li class="title2">订单详情</li>
+						<li class="title1"><a href="">购买指南</a></li>
+						<li class="title1"><a href="">支付方式</a></li>
+						<li class="title1"><a href="">送货政策</a></li>
+					</ul>
+					<ul class=" clo m2 left">
+						<li class="title2">订单详情</li>
+						<li class="title1"><a href="">购买指南</a></li>
+						<li class="title1"><a href="">支付方式</a></li>
+						<li class="title1"><a href="">送货政策</a></li>
+					</ul>
+					<ul class=" clo m2 left">
+						<li class="title2">订单详情</li>
+						<li class="title1"><a href="">购买指南</a></li>
+						<li class="title1"><a href="">支付方式</a></li>
+						<li class="title1"><a href="">送货政策</a></li>
+					</ul>
+					<ul class=" clo m2 left">
+						<li class="title2">订单详情</li>
+						<li class="title1"><a href="">购买指南</a></li>
+						<li class="title1"><a href="">支付方式</a></li>
+						<li class="title1"><a href="">送货政策</a></li>
+					</ul>
+					<ul class=" clo m2 left">
+						<li class="title2">订单详情</li>
+						<li class="title1"><a href="">购买指南</a></li>
+						<li class="title1"><a href="">支付方式</a></li>
+						<li class="title1"><a href="">送货政策</a></li>
+					</ul>
+				</div>
+				<div class="col m3">
+					<h4 class="right">400-619-0909</h4>
+					<p class="title1 right">周一至周日 9:00-18:00（仅收市话费）</p>
+					<button class="btn btn-info right"><span class="material-icons" style="vertical-align:middle;">search</span>在线帮助</button>
+				</div>
+
+			</div>
+			<div class="row">
+				<ul class="col m9 shengming">
+					<li class="left">Copyright © 2016, Smartisan Digital Co., Ltd. All Rights Reserved.北京锤子数码科技有限公司</li>
+					<li class="left"><a href="">法律声明</a></li>
+					<li class="left"><a href="">隐私条款</a></li>
+					<li class="left"><a href="">开发者中心</a></li>
+					<br />
+					<p class="title1">京ICP备14041720号 -1京ICP证140622号 京公网安备11010502025474</p>
+
+				</ul>
+			</div>
+		</footer>
+		<script src="js/jquery-1.12.4.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/materialize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Smartisan.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

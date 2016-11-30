@@ -1,0 +1,382 @@
+body {
+	background: #F1F1F1;
+}
+.juzhong{text-align:center;}
+.container .row {
+	margin: 0;
+}
+
+
+/*.header-nav开始*/
+
+.header-nav {
+	height: 100px!important;
+	background: #000;
+	line-height: 100px!important;
+}
+
+.header-nav .top-logo {
+	background-image: url(../img/logo.png);
+	background-position: 102px 194px;
+	width: 50px;
+	height: 50px;
+	margin: 20px 0 0 100px;
+}
+
+#header-nav a {
+	color: #aaa;
+}
+
+#header-nav a:hover,
+#header-nav .active a {
+	color: #fff;
+}
+
+
+/*.header-nav结束*/
+
+.content {
+	width: 100%;
+	min-width: 1336px;
+}
+
+.content-box {
+	width: 1336px;
+	margin: 0 auto;
+}
+
+
+/*.sub-nav开始*/
+
+.sub-nav {
+	height: 90px!important;
+	background: #f1f1f1;
+	margin-top: 40px;
+}
+
+.sub-nav a {
+	color: #666;
+}
+
+.sub-nav .active a,
+.sub-nav a:hover {
+	color: #333;
+	background: transparent;
+}
+
+.sub-nav .dian {
+	color: #666;
+}
+
+nav ul li.active {
+	background: transparent;
+}
+
+
+/*.sub-nav结束*/
+
+
+/*banner图切换开始*/
+
+.slides li {
+	list-style: none;
+}
+
+.slider-box.container {
+	width: 100%;
+	margin-top: 15px!important;
+}
+
+.slider.row {
+	width: 100%;
+}
+
+.slides.col.l12 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+}
+
+.slider {
+	height: 440px!important;
+	width: 100%;
+	box-shadow: 5px 10px 5px #666;
+	perspective: 1800px;
+	border-radius: 10px;
+}
+
+.slider img {
+	width: 100%;
+	height: 100%;
+}
+
+.slider .indicators {
+	z-index: 10;
+}
+
+.gaoducha-box {
+	position: relative;
+	transform-style: preserve-3d;
+	-webkit-perspective: 1600px;
+}
+
+.gaoducha-box img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+/*banner图切换结束*/
+
+.container.activities {
+	width: 100%;
+	border-radius: 10px;
+	height: 200px;
+	padding: 0;
+	margin: 0 auto;
+}
+
+
+/*热门产品区开始*/
+
+.togglePrice {
+	position: relative;
+	height: 60px;	
+}
+
+.togglePrice .price {
+	position: absolute;
+	top: 0;
+	left: 38%;
+}
+
+.togglePrice .more {
+	position: absolute;
+	top: 15px;
+	left: 30%;
+	display: none;
+}
+
+.container.hot,
+.container.jingxuan {
+	background: #fff;
+	width: 100%;
+	padding: 0;
+	margin: 30px auto!important;
+}
+
+.container.hot .header,
+.container.jingxuan .header {
+	border: 1px solid #ccc;
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+}
+
+.body li {
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	height: 428px;
+	overflow: hidden;
+	margin-top: 7px;
+}
+
+.body li:hover {
+	box-shadow: 5px 5px 20px #aaa;
+}
+
+.body li .price {
+	font-size: 22px;
+	color: #FF1744;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.title1 {
+	font-size: 14px;
+	color: #aaa;
+}
+.title3 {
+	font-size: 12px;
+	color: #aaa;margin:10px;
+}
+/*热门产品结束*/
+
+
+/*底部赞助商开始*/
+
+footer.container {
+	width: 100%;
+	min-width: 1336px;
+}
+
+footer.container .row {
+	width: 1336px;
+}
+
+footer.container .row ul {
+	padding: 20px 50px;
+}
+
+.title2 {
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+
+.title1 {
+	font-size: 14px;
+	margin-bottom: 7px;
+}
+
+.title2 a {
+	color: #999;
+}
+
+.title1 a {
+	color: #aaa;
+}
+
+footer.container .row .shengming li a {
+	margin-left: 15px;
+}
+
+
+/*底部赞助商结束*/
+
+
+/*商品类型切换用*/
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+	opacity: 1!important;
+	left: 0!important;
+	text-align: center;
+}
+
+
+/*login页面开始*/
+
+.login {
+	height: 600px;
+	background: #fff;
+	width: 440px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	border-radius:10px;
+	margin-top: -300px;
+	margin-left: -220px;
+	box-shadow: 0 9px 30px -6px rgba(0, 0, 0, .2), 0 18px 20px -10px rgba(0, 0, 0, .04), 0 18px 20px -10px rgba(0, 0, 0, .04), 0 10px 20px -10px rgba(0, 0, 0, .04);
+}
+.login .logo{margin:0;margin-left:130px;}
+input[type=text], input[type=password]{border:1px solid #999;width:300px;margin:0;}
+.login form{margin:0 auto;padding:20px 50px;}
+.tubiao{margin-top:10px!important;}
+.dengl{width:350px;border-radius:10px;height:45px;margin:20px 0;}
+
+/*login页面结束*/
+
+/*应用部分开始*/
+.banner-box,.yingyong-box{width:100%;min-width:1220px;}
+.banner,.yingyong{width:1220px;margin:0 auto;}
+
+.container.hot .body .active,.container.jingxuan .body .active{display:block;}
+.container.hot .body img,.container.jingxuan .body img{display:none;}
+.yingyong-nav{background:#f1f1f1;margin-top:40px;}
+.yingyong-nav a{color:#999;}
+.yingyong-nav .active a,
+.yingyong-nav a:hover {
+	color: #333;
+	background: transparent;
+}
+.container.yy{width:1220px;background:#fff;margin-top:50px;}
+.container.yy .row{width:1220px;}
+.container.yy .row li{height:350px;}
+.model1 img{margin-top:50px;}
+.model1 .img{margin:0 10px;}
+.model1 h6{margin:14px;}
+.model1 p{margin:10px;line-height:28px;}
+.model2 ul {margin-top:80px;}
+.model2 ul li a{color:#fff;margin-left:10px;}
+.model2 ul li{background:url(../img/m2.png);background-position:-45px -287px;height:50px!important;line-height:50px;width:280px;border-radius:10px;margin-bottom: 20px;}
+.model2 .erweima{margin:70px 0 0 80px;}
+.model2 .shuaji{margin-top:80px!important;margin-bottom:50px;}
+.model2 .center-block{margin-top:70px;margin-bottom:20px;}
+.shuaji{margin-top:50px!important;}
+/*应用部分结束*/
+
+/*Smartisan M1 / M1L页开始*/
+.moveTop{position:fixed;top:-40px;left:0px;z-index:999;}
+.M1menu{background:#f1f1f1;margin-top:37px;padding:0 80px;margin-bottom:30px;}
+.M1menu a {
+	color: #666;padding:5px;
+}
+.M1menu button{
+	margin-top:8px;
+}
+.M1menu .active a,
+.M1menu a:hover {
+	color: #333;
+	background: transparent;
+}
+
+.mm img:nth-child(2){width:100%;}
+.mm h4{margin-top:100px;}
+.mm img:hover{animation:move 2s ease-in;}
+@keyframes move{
+	from{transform: scale(1.05);}
+	to{transform: scale(1);}
+}
+.haitun{margin-left:-200px;}
+.logo{color:#333;font-size:18px;margin:5px 10px 5px 30px; }
+.three-phone .col.s3 img{width:380px;height:400px;}
+.three-phone.container{width:1336px;}
+.three-phone.container .s6{margin-top:80px;}
+.three-phone span{line-height:38px;}
+.three-phone.container .row{width:1336px;margin:0;padding:0;}
+.three-phone li{border-radius:10px;}
+.three-phone li:first-child a{display:block;background-image: url(../img/color-silver-btn_372e3f06ce.png);width:34px;height:34px;}
+
+.three-phone li:nth-child(2) a{display:block;background-image: url(../img/color-brown-btn_4d7b3ca5a4.png);
+width:34px;height:34px;}
+
+.three-phone li:last-child a{display:block;background-image: url(../img/color-mirror-btn_f60c0cefc8.png);width:34px;height:34px;}
+.togglePhone{background-position:-68px 0;}
+.three-phone span{line-height:34px;}
+.three-phone ul{margin-left:20%;}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+.shake {
+  animation:shake 1s ease;
+}
+.six.container{width:100%;margin:0 auto!important;background:#fff;padding-top:100px;}
+.six img{width:150px;}
+/*Smartisan M1 / M1L页结束*/
+.carousel .indicators .indicator-item{border:1px solid #333;}
+
+/*欢喜云开始*/
+.huanxi{width:1220px;margin:0 auto;position:relative;height:500px;padding-top:250px;}
+.huanxi button{margin:30px 0;}
+.yun{position:absolute;top:50px;left:50%;margin-left:-120px;}
+/*欢喜云结束*/
+
+
+.container.OS{width:1336px;margin:0 auto;}
