@@ -102,7 +102,8 @@ nav ul li.active {
 	height: 440px!important;
 	width: 100%;
 	box-shadow: 5px 10px 5px #666;
-	perspective: 1800px;
+	-webkit-perspective: 1800px;
+	        perspective: 1800px;
 	border-radius: 10px;
 }
 
@@ -117,7 +118,8 @@ nav ul li.active {
 
 .gaoducha-box {
 	position: relative;
-	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 	-webkit-perspective: 1600px;
 }
 
@@ -325,10 +327,14 @@ input[type=text], input[type=password]{border:1px solid #999;width:300px;margin:
 
 .mm img:nth-child(2){width:100%;}
 .mm h4{margin-top:100px;}
-.mm img:hover{animation:move 2s ease-in;}
+.mm img:hover{-webkit-animation:move 2s ease-in;animation:move 2s ease-in;}
+@-webkit-keyframes move{
+	from{-webkit-transform: scale(1.05);transform: scale(1.05);}
+	to{-webkit-transform: scale(1);transform: scale(1);}
+}
 @keyframes move{
-	from{transform: scale(1.05);}
-	to{transform: scale(1);}
+	from{-webkit-transform: scale(1.05);transform: scale(1.05);}
+	to{-webkit-transform: scale(1);transform: scale(1);}
 }
 .haitun{margin-left:-200px;}
 .logo{color:#333;font-size:18px;margin:5px 10px 5px 30px; }
@@ -348,6 +354,23 @@ width:34px;height:34px;}
 .three-phone span{line-height:34px;}
 .three-phone ul{margin-left:20%;}
 
+@-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
 @keyframes shake {
   from, to {
     -webkit-transform: translate3d(0, 0, 0);
@@ -365,7 +388,8 @@ width:34px;height:34px;}
   }
 }
 .shake {
-  animation:shake 1s ease;
+  -webkit-animation:shake 1s ease;
+          animation:shake 1s ease;
 }
 .six.container{width:100%;margin:0 auto!important;background:#fff;padding-top:100px;}
 .six img{width:150px;}
